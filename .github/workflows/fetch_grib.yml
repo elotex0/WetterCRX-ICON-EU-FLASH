@@ -46,6 +46,9 @@ jobs:
             23|00|01) RUN=21 ;;
           esac
           DATE=$(date -u +%Y%m%d)
+          if [ "$RUN" = "21" ]; then
+            DATE=$(date -u -d "yesterday" +%Y%m%d)
+          fi
           echo "RUN=$RUN" >> $GITHUB_ENV
           echo "DATE=$DATE" >> $GITHUB_ENV
           echo "run=$RUN" >> $GITHUB_OUTPUT
