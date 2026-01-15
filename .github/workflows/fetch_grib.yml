@@ -346,12 +346,12 @@ jobs:
 
 
           echo "Merged structure:"
-          ls -R iconeu/${{ needs.fetch_and_generate.outputs.run }}
+          ls -R iconeuflash/${{ needs.fetch_and_generate.outputs.run }}
 
       - name: Generate Metadata
         run: |
           python scripts/generate_metadata.py \
-            iconeu/${{ needs.fetch_and_generate.outputs.run }} \
+            iconeuflash/${{ needs.fetch_and_generate.outputs.run }} \
             ${{ needs.fetch_and_generate.outputs.run }} \
             ${{ needs.fetch_and_generate.outputs.date }}
 
